@@ -3,7 +3,26 @@
 This repo is maintained by **Hanson Liu**.  
 This repo is a clone of [varadbhogayata.github.io](https://github.com/varadbhogayata/varadbhogayata.github.io).  
 
+# Project Screenshots
 
+## Activity 1
+![Activity 1](screenshots/activity1_repo.png)
+
+## Activity 2
+![Activity 2](screenshots/activity2_repo.png)
+![Activity 2](screenshots/activity2_website.png)
+
+## Activity 3
+![Activity 3](screenshots/activity3_repo.png)
+![Activity 3](screenshots/activity3_website.png)
+
+## Activity 4
+![Activity 4](screenshots/activity4_repo.png)
+![Activity 4](screenshots/activity4_website.png)
+
+## Activity 5
+![Activity 5](screenshots/activity5_repo.png)
+![Activity 5](screenshots/activity5_website.png)
 
 
 # Personal Portfolio ⚡️ 

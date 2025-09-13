@@ -70,7 +70,79 @@
   <!-- Google Site Verification for indexing -->
   <meta name="google-site-verification" content="_qxK8tePiU2fhnwlwnJ7pkDFnj1k2EiKq_cYGy1Cb84" />
 </head>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const projects = [
+      {
+        title: "Weight Initialization on Semantic Segmentation",
+        description: "Optimization in Machine Learning",
+        tools: "Python",
+        image: "/assets/img/project-music-player.png",
+        demoLink: "https://drive.google.com/file/d/19qupKy-KmIFn31JsI6H8nGd3KF2AN5Dj/view",
+        githubLink: "https://github.com/hansonliu72888"
+      },
+      {
+        title: "AWS Site Manager",
+        description: "Interactive mapping and site tracking with React + DynamoDB",
+        tools: "React, DynamoDB, AWS",
+        image: "/assets/img/aws.png",
+        demoLink: "https://aws.amazon.com",
+        githubLink: "https://github.com/hansonliu72888"
+      },
+    ];
+  
+    let currentIndex = 0;
+    const recentProjects = document.getElementById("recent-projects");
+    const loadMoreButton = document.getElementById("load-more");
+  
+    function createProjectCard(project) {
+      return `
+        <div class="col s12 m6 l4">
+          <div class="card medium">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img src="${project.image}" alt="${project.title}" class="activator" style="height:100%; width:100%">
+            </div>
+            <div class="card-content">
+              <span class="card-title activator teal-text hoverline">${project.title}<i class="mdi-navigation-more-vert right"></i></span>
+              <p>${project.description}</p>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text"><small>Accomplishments</small><i class="mdi-navigation-close right"></i></span>
+              <ul><li><b>Tools:</b> ${project.tools}</li></ul>
+              <div class="card-action">
+                <a href="${project.demoLink}" target="_blank" class="btn-floating btn-large waves-effect waves-light blue-grey"><i class="fa fa-external-link"></i></a>
+                <a href="${project.githubLink}" target="_blank" class="btn-floating btn-large waves-effect waves-light blue-grey"><i class="fa fa-github"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+  
+    function loadProjects(count = projects.length) {
+      const remaining = projects.length - currentIndex;
+      const nextCount = Math.min(count, remaining);
 
+      recentProjects.insertAdjacentHTML(
+        "beforeend",
+        projects.slice(currentIndex, currentIndex + nextCount)
+                .map(createProjectCard)
+                .join('')
+      );
+
+      currentIndex += nextCount;
+
+      if (currentIndex >= projects.length) loadMoreButton.style.display = "none";
+    }
+
+
+    loadProjects(1);
+  
+    loadMoreButton.addEventListener("click", () => loadProjects());
+  });
+  </script>
+  
+  
 <body>
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PGZH8HT"
@@ -364,99 +436,14 @@
     <!-- Fourth Section: Projects -->
     <section id="projects" class="section scrollspy">
       <h3 class="page-title white-text teal">Projects</h3>
+      
       <div class="container">
-        <div class="row">
-
-          <div class="col s12 m6 l4">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="music streaming app" src="/assets/img/project-music-player.png" style="height: 100%; width: 100%" class="activator" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator teal-text hoverline">Weight Initialization on Semantic Segmentation<i
-                    class="mdi-navigation-more-vert right"></i></span>
-                <p>
-                  Optimization in Machine Learning
-                </p>
-              </div>
-              <div class="card-reveal">
-                <!-- TODO: change this -- only close button -->
-                <!-- <span class="card-title brown-text">Accomplishments<i class="mdi-navigation-close right"></i></span> -->
-                <span class="card-title grey-text"><small>Accomplishments</small><i
-                    class="mdi-navigation-close right"></i></span>
-                <ul>
-                  <li><b>Tools:</b> Python</li>
-                  <li>Evaluated GradInit, Kaiming, Xavier, Zero weight initialization on semantic segmentation using FCN32s and the PASCAL VOC
-                    2012 dataset.</li>
-                  <li>Integrated GradInit into segmentation tasks, showing competitive performance and validating its model-agnostic claims.</li>
-                  <li>Achieved highest validation accuracy with Zero Initialization, prompting novel insights into task-specific weight dynamics.</li>
-              
-
-
-                </ul>
-                <div class="card-action">
-                  <a aria-label="Visit " href="https://drive.google.com/file/d/19qupKy-KmIFn31JsI6H8nGd3KF2AN5Dj/view" target="_blank" data-position="top"
-                    data-tooltip="View Online"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                      class="fa fa-external-link"></i></a>
-                  <a aria-label="Visit the GitHub repo for  project" href="https://github.com/hansonliu72888"
-                    target="_blank" data-position="top" data-tooltip="View Source"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                      class="fa fa-github"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        
-
-          <!-- 1. Django Project -->
-          <!-- <div class="col s12 m6 l6">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="django web app" src="/assets/img/project-library-logo.png" style="height: 100%; width: 100%" class="activator" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator teal-text hoverline">Local Library Web-App<i
-                    class="mdi-navigation-more-vert right"></i></span>
-                <p>
-                  A web-app that creates an online catalog for a small local library, where users can browse available books and manage their accounts.
-                </p>
-              </div>
-              <div class="card-reveal">
-                <span class="card-title grey-text"><small>Accomplishments</small><i
-                    class="mdi-navigation-close right"></i></span>
-                <ul>
-                  <li><b>Tools:</b> HTML, CSS, Bootstrap, SQLite, Django, Heroku</li>
-                  <li>Users can view list and detail information for books and authors.</li>
-                  <li>Admin users can create and manage models.</li>
-                  <li>Librarians can renew reserved books.</li>
-
-                </ul>
-                <div class="card-action">
-                  <a aria-label="Visit " href="https://django-local-lib.herokuapp.com" target="_blank" data-position="top"
-                    data-tooltip="View Online"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                      class="fa fa-external-link"></i></a>
-                  <a aria-label="Visit the GitHub repo for  project" href="https://github.com/varadbhogayata/django-local-library"
-                    target="_blank" data-position="top" data-tooltip="View Source"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                      class="fa fa-github"></i></a>
-                </div>
-              </div>
-            </div>
-          </div> -->
-
-       
-
-    
-
-       
-     
-     
-
-          <!-- ************* -->
+        <h4>Recent Projects</h4>
+        <div id="recent-projects" class="row"></div>
+        <div class="center-align">
+          <button id="load-more" class="teal" style="color:#FFFFFF">Load More</button>
         </div>
+        
       </div>
     </section>
 

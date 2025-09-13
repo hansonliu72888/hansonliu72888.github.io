@@ -85,7 +85,7 @@
   position: relative;
   padding: 11px 35px;
   background: #fff;
-  color: #00796b;
+  color: #825fa3;
   border: 2px solid #fff;
   font-weight: 600;
   font-size: 15px;
@@ -356,7 +356,7 @@ h3 {
 }
 
 .overlay {
-  background-color: rgba(38, 25, 88, 0.4);
+  background-color: rgba(224, 0, 150, 0.4);
   height: 100%;
   left: 0;
   position: absolute;
@@ -549,7 +549,7 @@ small {
 /* main .teal-text */
 
 .teal-text {
-  color: #008073 !important;
+  color: #825fa3 !important;
 }
 
 /* .teal-text {
@@ -559,7 +559,7 @@ small {
 /* .teal */
 
 .teal {
-  background-color: #008073 !important;
+  background-color: #825fa3 !important;
 }
 
 /* .teal {
